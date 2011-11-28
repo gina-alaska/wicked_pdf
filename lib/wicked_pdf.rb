@@ -67,7 +67,7 @@ class WickedPdf
       "--#{name.gsub('_', '-')} " + case type
         when :boolean then ""
         when :numeric then value.to_s
-        else "'#{value}'"
+        else "'#{value.gsub(/\s/, '\ ')}'"
       end + " "
     end
 
